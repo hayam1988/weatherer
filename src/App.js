@@ -22,24 +22,30 @@ class App extends React.Component {
   render() {
     var { memes, loading, text } = this.state
     return (
-      <div className="App">
-        <form className="App-header" onSubmit={this.getMemes}>
+      <div className="App"> Memmer
+        <form className="App-header" onSubmit={this.getMemes}> 
           <input value={text}
-            onChange={e => this.setState({ text: e.target.value })}
+            onChange={e => this.setState({ text: e.target.value })} 
           />
           <button disabled={loading || !text} type="submit">Search</button>
         </form>
 
       <main>
-        {memes.map(m => {
-          return <img alt="meme" key={m.id}
-            src={m.images.fixed_hieght.url}
-          />
-        })}
+            {memes.map(meme=>{
+              return <Meme key={meme.id} meme={meme} />
+            })}
       </main>
       </div>
   );
   }
 }
 
+
+function Meme(props){
+  const {meme} = props
+  const url = meme.images.fixed_height.url
+  return (<div className="meme-wrap" onClick={()=>window.open(url, '_blank')}>
+    <img height="200" alt="meme" src={url} />
+  </div>)
+}
 export default App;
