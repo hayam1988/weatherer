@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
+
 
 
 class App extends React.Component {
@@ -24,10 +28,22 @@ class App extends React.Component {
     return (
       <div className="App"> Memmer
         <form className="App-header" onSubmit={this.getMemes}> 
-          <input value={text}
-            onChange={e => this.setState({ text: e.target.value })} 
-          />
-          <button disabled={loading || !text} type="submit">Search</button>
+          <TextField value={text}
+          label="Search for Memes"
+          varient="outlined"
+          margin="normal"
+          
+          onChange={e => this.setState({ text: e.target.value })} 
+        style = {{width:'100%', marginLeft: 8}}
+         />
+          <Button variant=" contained"
+          color="primary"
+          type="submit"
+          disabled={loading || !text}
+          style = {{ margin: '0 10px', height: '75'}} >
+          <SearchIcon style={{margnRight:8}}/>
+          Search
+           </Button>
         </form>
 
       <main>
