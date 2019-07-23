@@ -26,7 +26,6 @@
 
 .App-header {
  /*background-color: #282c34;*/
-
  border: solid 2px;
  border-color: #ffdde1;
  /*background: #ee9ca7; */
@@ -48,13 +47,7 @@
   font-size:24px;
  }
 
- .App-header input:hover{
-  /* border:  solid 2px;
-   border-color: aqua;*/
- }
 
-
- 
  .App-header button {
   height:47px;
   width:200px;
@@ -65,14 +58,14 @@
 
  .App-header button:hover{
   border: outset 2px;
-  border-color: rgb(125, 126, 126);
-  background:  rgb(101, 182, 182);
-  color: white;
+  border-color: rgb(191, 192, 192);
+  background:  rgb(139, 184, 184);
+  color: rgb(45, 56, 71);
 }
 
 
 .button:disabled{
-  background: rgb(197, 196, 196);
+  background: rgb(73, 67, 67);
 }
 
 
