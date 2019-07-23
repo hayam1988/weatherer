@@ -4,12 +4,18 @@
   color: white;
   font-size: calc(10px + 2vmin);
   height: 100vh;
-  
-  background: #ee9ca7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  
+  /* Pink */
+  /*
+  background: #ee9ca7;  fallback for old browsers 
+  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);   Chrome 10-25, Safari 5.1-6 
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+
+  /* Blue*/ 
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,  rgb(98, 144, 197), #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgb(98, 144, 197), #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .App-logo {
@@ -20,9 +26,10 @@
 
 .App-header {
  /*background-color: #282c34;*/
+
  border: solid 2px;
  border-color: #ffdde1;
- background: #ee9ca7; 
+ /*background: #ee9ca7; */
   min-height: 10vh;
   height: 90px;
   display: flex;
@@ -31,6 +38,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
   
 }
 
@@ -41,16 +49,18 @@
  }
 
  .App-header input:hover{
-   border:  solid 2px;
-   border-color: aqua;
+  /* border:  solid 2px;
+   border-color: aqua;*/
  }
+
+
  
  .App-header button {
   height:47px;
   width:200px;
   cursor: pointer;
- /* border:  solid 1px;
-  border-color: rgb(139, 184, 184);*/
+  border:  solid 1px;
+  border-color: rgb(139, 184, 184);
  }
 
  .App-header button:hover{
@@ -98,3 +108,4 @@
     transform: rotate(360deg);
   }
 }
+

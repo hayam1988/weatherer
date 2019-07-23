@@ -3,6 +3,7 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -26,13 +27,13 @@ class App extends React.Component {
   render() {
     var { memes, loading, text } = this.state
     return (
-      <div className="App"> Memmer
+      <div className="App"> search_Memes
         <form className="App-header" onSubmit={this.getMemes}> 
-          <TextField value={text}
+          <TextField className= ".MuiInputBase-input"
+          value={text}
           label="Search for Memes"
-          varient="outlined"
-          margin="normal"
-          
+          variant="outlined"    
+        
           onChange={e => this.setState({ text: e.target.value })} 
         style = {{width:'100%', marginLeft: 8}}
          />
@@ -40,9 +41,10 @@ class App extends React.Component {
           color="primary"
           type="submit"
           disabled={loading || !text}
-          style = {{ margin: '0 10px', height: '75'}} >
+          style = {{ width:150, margin: '0 10px', height: '75', color: 'white'}} >
           <SearchIcon style={{margnRight:8}}/>
           Search
+          {loading && <CircularProgress size={24}  />}
            </Button>
         </form>
 
