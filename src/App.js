@@ -13,13 +13,13 @@ class App extends React.Component {
   state = {
     weather: null,
     loading: false,
-    text: '',
+    text: '', 
   }
 
   getWeather = async (e) => {
     e.preventDefault() // no refreshing when searching
     this.setState({ loading: true, weather: null })
-    var key = 'bfc8f5b2eabca4875bc14b9db2704655'
+    var key = 'bfc8f5b2eabca4875bc14b9db2704655' 
     var url = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.text}&units=imperial&APPID=${key}`
     var r = await fetch(url)
     var json = await r.json()
