@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import logo from './Weatherlogo.png'
+/* how to implement this*/
+/*import Div100vh from 'react-div-100vh'*/
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
@@ -28,8 +31,8 @@ class App extends React.Component {
     if (r.status===200){
     //set thet weather in state and loading to false and text is an empty string
     this.setState({ weather: json.list, loading: false, text: '', error:null})
-    } else{
-      this.setState({error: json.message, loading: false,})
+    } else {
+      this.setState({error: json.message, loading: false})
     }
   }
 
@@ -44,11 +47,15 @@ class App extends React.Component {
       data = {
         labels: weather.map(w => moment(w.dt*1000).format('llll')),
         datasets: [{
-          label: 'Temperature',
+          label:  'Temperature',
           data: weather.map(w => w.main.temp),
           borderWidth: 1,
-          backgroundColor: 'rgba(132,99,255,0.2)',
+         /*backgroundColor: 'rgba(132,99,255,0.2)',
+         backgroundColor: 'rgba(22, 165, 170, 0.5)',
+         font color needs to change*/
+          backgroundColor: 'rgba(26, 150, 133, 0.8)',
           borderColor: 'rgba(132,99,255,1)',
+          color: 'white',
           hoverBackgroundColor: 'rgba(132,99,255,0.4)',
           hoverBorderColor: 'rgba(132,99,255,1)',
 
@@ -56,9 +63,11 @@ class App extends React.Component {
       }
     }
     return (
+     
       <div className="App"> search_weather
-        <form className="App-header" onSubmit={this.getweather}>
-          <TextField className=".MuiInputBase-input"
+       <img src={logo} className="logo" alt="logo of weather" />
+        <form className="App-header" onSubmit={this.getWeather}>
+          <TextField
             value={text}
             label="Search for weather"
             variant="outlined"
@@ -70,24 +79,24 @@ class App extends React.Component {
             color="primary"
             type="submit"
             disabled={loading || !text}
-            style={{ width: 150, margin: '0 10px', height: '75', color: 'white' }} >
-            <SearchIcon style={{ margnRight: 8 }} />
+            style={{ width: 150, margin: '0 10px', height: 75, color: 'white' }} >
+            <SearchIcon style={{ marginRight: 8 }} />
             Search
-          {loading && <CircularProgress size={24} />}
+            {loading && <CircularProgress size={24} />}
           </Button>
         </form>
 
         <main>
           {data && <Bar 
             data={data}
-            width={100}
-            height={50}
+            width={800}
+            height={300}
          /*  options={{ maintainAspectRatio: false}}*/
 
     />}
     {error && <div style= {{color: 'red'}}>{error}</div>}
         </main>
-      </div>
+        </div>
     );
   }
 }
